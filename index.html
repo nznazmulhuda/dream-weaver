@@ -98,6 +98,26 @@
 						rgba(18, 19, 45, 0) 100%
 					);
 				}
+
+				.card {
+					border-radius: 24px;
+					background: #f3f3f5;
+					padding: 40px;
+					border: 1px solid white;
+				}
+
+				.card:hover {
+					border: 1px solid #797dfc;
+					background: rgba(121, 125, 252, 0.1);
+				}
+
+				.success {
+					width: 18px;
+					height: 18px;
+					flex-shrink: 0;
+					border-radius: 100px;
+					border: 2px solid var(--white-white, #fff);
+				}
 			}
 		</style>
 	</head>
@@ -258,7 +278,190 @@
 		</header>
 
 		<!-- main section is here -->
-		<main class="container mx-auto"></main>
+		<main class="container mx-auto mt-[100px] mb-[100px]">
+			<!-- lets discuss section -->
+			<section class="flex flex-col items-center justify-center">
+				<!-- section title -->
+				<h1 class="text-[#12132D] text-[40px] font-[900]">
+					Let’s Discuss
+				</h1>
+
+				<!-- section discription -->
+				<p
+					class="text-lg text-[#12132D99] inter font-medium leading-7 w-[50%] text-center mt-4"
+				>
+					Yes, you can run unit tests and view the results directly
+					within the app. The integrated testing features allow for a
+					streamlined .
+				</p>
+
+				<!-- main part is here -->
+				<section class="grid grid-cols-12 w-full mt-12 gap-6">
+					<!-- left side all cards -->
+					<div class="col-span-8">
+						<!-- cards section -->
+						<section class="grid grid-cols-1 gap-6">
+							<!-- card -->
+							<div class="card grid grid-cols-12 gap-6">
+								<div class="col-span-1 relative">
+									<img src="./pip.png" alt="" />
+									<div
+										class="success absolute -top-3 right-0 bg-success"
+									></div>
+								</div>
+
+								<div class="col-span-11 divide-y divide-dashed">
+									<div>
+										<div class="flex gap-5 mb-2">
+											<h1
+												class="text-sm font-medium inter text-[#12132DCC]"
+											>
+												# Music
+											</h1>
+											<p
+												class="text-sm font-medium inter text-[#12132DCC]"
+											>
+												Author:
+												<span>Awlad Hossain</span>
+											</p>
+										</div>
+
+										<div class="mb-3">
+											<h1
+												class="text-[#12132D] font-bold text-xl"
+											>
+												10 Kids Unaware of Their
+												Halloween Costume
+											</h1>
+										</div>
+
+										<div class="mb-5">
+											<p
+												class="text-[#12132D99] leading-7 font-medium inter text-[16px]"
+											>
+												It’s one thing to subject
+												yourself to ha Halloween costume
+												mishap because, hey that’s your
+												prerogative
+											</p>
+										</div>
+									</div>
+
+									<div class="pt-5 flex justify-between">
+										<div class="flex gap-6 items-center">
+											<div
+												class="flex gap-3 items-center justify-center"
+											>
+												<img
+													width="28px"
+													height="28px"
+													src="./images/comment.png"
+													alt=""
+												/>
+												<p
+													class="text-[#12132D99] inter text-[16px]"
+												>
+													560
+												</p>
+											</div>
+
+											<div
+												class="flex gap-3 items-center justify-center"
+											>
+												<img
+													width="28px"
+													height="28px"
+													src="./images/read.png"
+													alt=""
+												/>
+												<p
+													class="text-[#12132D99] inter text-[16px]"
+												>
+													560
+												</p>
+											</div>
+
+											<div
+												class="flex gap-3 items-center justify-center"
+											>
+												<img
+													width="28px"
+													height="28px"
+													src="./images/clock.png"
+													alt=""
+												/>
+												<p
+													class="text-[#12132D99] inter text-[16px]"
+												>
+													560
+												</p>
+											</div>
+										</div>
+
+										<div>
+											<img
+												src="./images/email.png"
+												alt=""
+											/>
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+					</div>
+
+					<!-- right side -->
+					<div class="col-span-4">
+						<!-- Mark as read section -->
+						<div class="p-6 bg-[#12132D0D] rounded-3xl">
+							<div class="flex justify-between items-center">
+								<h1 class="text-[#12132D] font-bold text-xl">
+									Title
+								</h1>
+
+								<!-- mark as read -->
+								<div class="flex gap-2">
+									<img src="./images/reading.png" alt="" />
+									<p
+										class="text-[#12132D99] font-normal text-[16px] inter"
+									>
+										Mark as read (4)
+									</p>
+								</div>
+							</div>
+
+							<!-- reading title is here -->
+							<div>
+								<div class="bg-white mt-4 rounded-2xl p-4">
+									<div class="flex justify-between">
+										<h1
+											class="text-[#12132D] w-[70%] text-[16px] font-semibold"
+										>
+											10 Kids Unaware of Their Halloween
+											Costume
+										</h1>
+
+										<div class="flex items-center">
+											<img
+												src="./images/read.png"
+												alt=""
+											/>
+											<p
+												class="text-[#12132D99] font-normal text-[16px] inter"
+											>
+												1,568
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</section>
+
+			
+		</main>
 
 		<!-- footer section is here -->
 		<footer
