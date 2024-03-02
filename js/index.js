@@ -137,6 +137,7 @@ function displayData(data) {
 	});
 }
 
+let readCount = 1;
 function markAsRead(id) {
 	const postTitle = document.getElementById(`title_${id}`).innerText;
 	const postView = document.getElementById(`postView_${id}`).innerText;
@@ -167,4 +168,7 @@ function markAsRead(id) {
     `;
 
 	readField.appendChild(div);
+	const read = document.getElementById("readCountDown");
+	read.innerText = readCount;
+	readCount++;
 }
