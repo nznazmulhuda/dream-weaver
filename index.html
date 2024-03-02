@@ -47,6 +47,8 @@
 							theme: "#797DFC",
 							active: "#10B981",
 							inActive: "#FF3434",
+							borderColor: "rgba(3, 7, 18, 0.10)",
+							menuBg: "rgba(18, 19, 45, 0.03)",
 						},
 					},
 				},
@@ -70,19 +72,60 @@
 	<!-- body tag is here -->
 	<body>
 		<!-- header section is here -->
-		<header class="container mx-auto">
+		<header class="container mx-auto mt-14">
+			<!-- navbar is here -->
+			<nav class="flex justify-between items-center">
+				<!-- logo is here -->
+				<div class="cursor-pointer">
+					<img src="./images/logo.png" alt="" />
+				</div>
 
-        </header>
+				<!-- menu is here -->
+				<div class="flex items-center gap-3">
+					<div
+						title="Home"
+						class="border-2 border-borderColor rounded-full px-4 py-4 bg-menuBg cursor-pointer"
+					>
+						<img src="./images/home.png" alt="" />
+					</div>
+
+					<div
+						title="Tooltip"
+						class="border-2 border-borderColor rounded-full px-4 py-4 bg-menuBg cursor-pointer"
+					>
+						<img src="./images/edit.png" alt="" />
+					</div>
+
+					<div
+						title="Add"
+						class="border-2 border-borderColor rounded-full px-4 py-4 bg-menuBg cursor-pointer"
+					>
+						<img src="./images/add.png" alt="" />
+					</div>
+
+					<div
+						title="Report"
+						class="border-2 border-borderColor rounded-full px-4 py-4 bg-menuBg cursor-pointer"
+					>
+						<img src="./images/flag.png" alt="" />
+					</div>
+
+					<div class="ml-3">
+						<button
+							class="px-10 py-[18px] bg-theme rounded-[50px] text-white font-bold text-xl"
+						>
+							Sign In
+						</button>
+					</div>
+				</div>
+			</nav>
+		</header>
 
 		<!-- main section is here -->
-		<main class="container mx-auto">
-
-        </main>
+		<main class="container mx-auto"></main>
 
 		<!-- footer section is here -->
-		<footer class="w-full">
-
-        </footer>
+		<footer class="w-full"></footer>
 
 		<!-- all JavaScript file is here -->
 		<script src="./js/index.js"></script>
