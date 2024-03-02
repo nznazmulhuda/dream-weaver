@@ -4,6 +4,7 @@ const fetchData = async () => {
 	);
 	const data = await response.json();
 
+	loading("block");
 	displayData(data);
 };
 
@@ -13,6 +14,7 @@ const latestDataLoad = async () => {
 	);
 	const data = await res.json();
 
+	loaderLetest("block");
 	displayLatestData(data);
 };
 

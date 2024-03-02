@@ -119,6 +119,14 @@
 					border: 2px solid var(--white-white, #fff);
 				}
 
+				.error {
+					display: flex !important;
+					align-items: center !important;
+					justify-content: center !important;
+					gap: 16px !important;
+					margin-top: 40px;
+				}
+
 				.latestPost-p {
 					color: rgba(18, 19, 45, 0.6);
 					font-size: 16px;
@@ -315,6 +323,29 @@
 						>
 							<!-- All cards are here -->
 						</section>
+
+						<!-- TODO: Handle if no data in database -->
+						<div
+							id="errorMessage"
+							class="text-3xl hidden font-bold"
+						>
+							<img
+								width="64px"
+								height="64px"
+								src="./images/cryingCat.png"
+								alt=""
+							/>
+							<h1>
+								Sorry there is no data.
+								<span id="noData"></span>
+							</h1>
+						</div>
+
+						<div id="loaderAll" class="text-center">
+							<span
+								class="loading loading-dots loading-lg"
+							></span>
+						</div>
 					</div>
 
 					<!-- right side -->
@@ -401,6 +432,10 @@
 				<!-- latest posts -->
 				<section class="mt-12">
 					<div id="latestPosts" class="grid grid-cols-3 gap-6"></div>
+
+					<div id="loaderLetest" class="text-center">
+						<span class="loading loading-dots loading-lg"></span>
+					</div>
 				</section>
 			</section>
 		</main>

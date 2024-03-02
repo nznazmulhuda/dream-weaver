@@ -1,25 +1,28 @@
+// TODO: Display all the data in the api or data source
 function displayData(data) {
 	const posts = data.posts;
-	document.getElementById("cardsSection").innerHTML = ``;
 
-	posts.forEach(function (post) {
-		const postImage = post.image,
-			isActive = post.isActive,
-			postID = post.id,
-			postCategory = post.category,
-			postAuthor = post.author.name,
-			postTitle = post.title,
-			postBody = post.description,
-			postComment = post.comment_count,
-			postView = post.view_count,
-			postTime = post.posted_time,
-			cardsSection = document.getElementById("cardsSection"),
-			postCard = document.createElement("div");
+	// FIXME: Handle errors when no data is available.
+	if (posts.length > 0) {
+		// target all the posts
+		posts.forEach(function (post) {
+			const postImage = post.image,
+				isActive = post.isActive,
+				postID = post.id,
+				postCategory = post.category,
+				postAuthor = post.author.name,
+				postTitle = post.title,
+				postBody = post.description,
+				postComment = post.comment_count,
+				postView = post.view_count,
+				postTime = post.posted_time,
+				cardsSection = document.getElementById("cardsSection"),
+				postCard = document.createElement("div");
 
-		postCard.setAttribute("id", postID);
-		postCard.classList.add("cards", "grid", "grid-cols-12", "gap-6");
+			postCard.setAttribute("id", postID);
+			postCard.classList.add("cards", "grid", "grid-cols-12", "gap-6");
 
-		postCard.innerHTML = `
+			postCard.innerHTML = `
                     <div class="col-span-1 relative">
                         <img src=" ${postImage} " alt="" />
                         <div id='active_${postID}'
@@ -122,24 +125,43 @@ function displayData(data) {
                             </div>
                         </div>
         `;
-		cardsSection.appendChild(postCard);
-		if (isActive) {
-			document
-				.getElementById(`active_${postID}`)
-				.classList.add("bg-active");
-		} else {
-			document
-				.getElementById(`active_${postID}`)
-				.classList.remove("bg-active");
-			document
-				.getElementById(`active_${postID}`)
-				.classList.add("bg-inActive");
-		}
-	});
+			cardsSection.appendChild(postCard);
+
+			// TODO: Show the active state of the cards
+			if (isActive) {
+				document
+					.getElementById(`active_${postID}`)
+					.classList.add("bg-active");
+			} else {
+				document
+					.getElementById(`active_${postID}`)
+					.classList.remove("bg-active");
+				document
+					.getElementById(`active_${postID}`)
+					.classList.add("bg-inActive");
+			}
+		});
+
+		// Loading off when data is available
+		loading("none");
+
+		// Unhide the error message when data is available
+		document.getElementById("errorMessage").classList.remove("error");
+		document.getElementById("errorMessage").classList.add("hidden");
+	} else {
+		// TODO: display the error message and loading is off
+		loading("none");
+		document.getElementById("errorMessage").classList.add("error");
+		document.getElementById("errorMessage").classList.remove("hidden");
+	}
 }
+
+// =================================================================================================
+// =================================================================================================
 
 let readCount = 1;
 function markAsRead(id) {
+	// Target the title and viewCount which post is clicked
 	const postTitle = document.getElementById(`title_${id}`).innerText;
 	const postView = document.getElementById(`postView_${id}`).innerText;
 	const readField = document.getElementById("readField");
@@ -167,16 +189,22 @@ function markAsRead(id) {
                     </div>
                 </div>
     `;
-
 	readField.appendChild(div);
+
+	// Mark the post as read
 	const read = document.getElementById("readCountDown");
 	read.innerText = readCount;
 	readCount++;
 }
 
+// =================================================================================================
+// =================================================================================================
+
+// TODO: Display the latest data in the document from the api
 function displayLatestData(posts) {
 	const latestPosts = document.getElementById("latestPosts");
 
+	// Target all the latest post
 	for (const post of posts) {
 		const image = post.cover_image,
 			profilePicture = post.profile_image,
@@ -187,21 +215,23 @@ function displayLatestData(posts) {
 			dates = post.author.posted_date,
 			div = document.createElement("div");
 		let designation = "";
-        let date = "";
-        
-        if (designations) {
-            designation = designations;
-        } else {
-            designation = "No Designation";
-        }
+		let date = "";
 
-        if (dates) {
-            date = dates;
-        } else {
-            date = "No publish date";
-        }
+		// TODO: Handle the error when designation is not available
+		if (designations) {
+			designation = designations;
+		} else {
+			designation = "No Designation";
+		}
 
+		// TODO: Handle the error when date is not available
+		if (dates) {
+			date = dates;
+		} else {
+			date = "No publish date";
+		}
 
+		// Displaying the latest post
 		div.classList.add(
 			"card",
 			"border-2",
@@ -260,21 +290,63 @@ function displayLatestData(posts) {
 
 		latestPosts.appendChild(div);
 	}
+
+	// TODO: Remove the loader
+	loaderLetest("none");
 }
 
-// =================================================================
-// =================================================================
+// =================================================================================================
+// =================================================================================================
 
+// TODO: Search posts using the category name.
 function searchPosts() {
 	const categoryName = document.getElementById("categoryName").value;
+
+	document.getElementById("cardsSection").innerHTML = ``;
 	document.getElementById("categoryName").value = ``;
 
+	// TODO: Handle error when search field is empty.
 	if (categoryName.length) {
-		const url = `https://openapi.programming-hero.com/api/retro-forum/posts?category=${categoryName}`;
-		fetch(url)
-			.then((res) => res.json())
-			.then((posts) => {
-				displayData(posts);
-			});
+		// TODO: Display the loader
+		loading("block");
+		document.getElementById("errorMessage").classList.remove("error");
+		document.getElementById("errorMessage").classList.add("hidden");
+
+		// TODO: show loader for 2/3s.
+		setTimeout(() => {
+			const url = `https://openapi.programming-hero.com/api/retro-forum/posts?category=${categoryName}`;
+			fetch(url)
+				.then((res) => res.json())
+				.then((posts) => {
+					loading("block");
+					displayData(posts);
+				});
+		}, 2000);
+	} else {
+		document.getElementById("errorMessage").classList.add("error");
+		document.getElementById("errorMessage").classList.remove("hidden");
+		alert("Please select a category");
 	}
+}
+
+// TODO: Search when enter button is clicked.
+window.addEventListener("keydown", (e) => {
+	if (e.key === "Enter") {
+		searchPosts();
+	}
+});
+
+// =================================================================================================
+// =================================================================================================
+
+// TODO: loading function
+function loading(action) {
+	const loader = document.getElementById("loaderAll");
+	loader.style.display = action;
+}
+
+// TODO: loading function for latest post
+function loaderLetest(action) {
+	const loader = document.getElementById("loaderLetest");
+	loader.style.display = action;
 }
