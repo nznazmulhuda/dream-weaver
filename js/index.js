@@ -183,9 +183,24 @@ function displayLatestData(posts) {
 			title = post.title,
 			discription = post.description,
 			name = post.author.name,
-			designation = post.author.designation,
-			date = post.author.posted_date,
+			designations = post.author.designation,
+			dates = post.author.posted_date,
 			div = document.createElement("div");
+		let designation = "";
+        let date = "";
+        
+        if (designations) {
+            designation = designations;
+        } else {
+            designation = "No Designation";
+        }
+
+        if (dates) {
+            date = dates;
+        } else {
+            date = "No publish date";
+        }
+
 
 		div.classList.add(
 			"card",
