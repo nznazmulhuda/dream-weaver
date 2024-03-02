@@ -172,3 +172,76 @@ function markAsRead(id) {
 	read.innerText = readCount;
 	readCount++;
 }
+
+function displayLatestData(posts) {
+	const latestPosts = document.getElementById("latestPosts");
+
+	for (const post of posts) {
+		const image = post.cover_image,
+			profilePicture = post.profile_image,
+			title = post.title,
+			discription = post.description,
+			name = post.author.name,
+			designation = post.author.designation,
+			date = post.author.posted_date,
+			div = document.createElement("div");
+
+		div.classList.add(
+			"card",
+			"border-2",
+			"border-[#12132D26]",
+			"p-6",
+			"bg-base-100",
+			"shadow-xl"
+		);
+		div.innerHTML = `
+    <figure class="rounded-[20px]">
+        <img
+            src=" ${image} "
+            alt=""
+            class="rounded-xl"
+        />
+    </figure>
+
+    <div class="mt-6 flex justify-between flex-col">
+    <div>
+        <div
+            class="flex gap-3 items-center text-[#12132D99] text-[16px] mb-4"
+        >
+            <img src="./images/date.png" alt="" />
+            <p>${date}</p>
+        </div>
+
+        <h2
+            class="text-[#12132D] text-lg font-extrabold leading-7"
+        >
+            ${title}
+        </h2>
+
+        <p class="mt-2 mb-2 latestPost-p">${discription}</p>
+        </div>
+
+        <div>
+            <div class="flex gap-4 items-center mt-4">
+                <img width="44px" height="44px" class="rounded-full" src=" ${profilePicture} " alt="" />
+
+                <div>
+                    <h1
+                        class="text-[#12132D] text-[16px] font-bold"
+                    >
+                        ${name}
+                    </h1>
+                    <p
+                        class="text-[#12132D99] text-sm font-normal"
+                    >
+                        ${designation}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    `;
+
+		latestPosts.appendChild(div);
+	}
+}

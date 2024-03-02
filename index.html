@@ -118,6 +118,13 @@
 					border-radius: 100px;
 					border: 2px solid var(--white-white, #fff);
 				}
+
+				.latestPost-p {
+					color: rgba(18, 19, 45, 0.6);
+					font-size: 16px;
+					font-weight: 400;
+					line-height: 26px;
+				}
 			}
 		</style>
 	</head>
@@ -323,7 +330,9 @@
 									<p
 										class="text-[#12132D99] font-normal text-[16px] inter"
 									>
-										Mark as read (<span id="readCountDown">0</span>)
+										Mark as read (<span id="readCountDown"
+											>0</span
+										>)
 									</p>
 								</div>
 							</div>
@@ -389,52 +398,7 @@
 
 				<!-- latest posts -->
 				<section class="mt-12">
-					<div class="grid grid-cols-3 gap-6">
-						<div
-							class="card border-2 border-[#12132D26] p-6 bg-base-100 shadow-xl"
-						>
-							<figure class="rounded-[20px]">
-								<img
-									src="./demo.jpg"
-									alt="Shoes"
-									class="rounded-xl"
-								/>
-							</figure>
-
-							<div class="mt-6">
-								<div
-									class="flex gap-3 items-center text-[#12132D99] text-[16px] mb-4"
-								>
-									<img src="./images/date.png" alt="" />
-									<p>29 January 2024</p>
-								</div>
-
-								<h2
-									class="text-[#12132D] text-lg font-extrabold leading-7"
-								>
-									What will a mars habitat force that impact
-									in our daily life!!!
-								</h2>
-
-								<div class="flex gap-4 items-center mt-4">
-									<img src="./pip.png" alt="" />
-
-									<div>
-										<h1
-											class="text-[#12132D] text-[16px] font-bold"
-										>
-											Cameron Williamson
-										</h1>
-										<p
-											class="text-[#12132D99] text-sm font-normal"
-										>
-											Unknown
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+					<div id="latestPosts" class="grid grid-cols-3 gap-6"></div>
 				</section>
 			</section>
 		</main>
