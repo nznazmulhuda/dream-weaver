@@ -1,5 +1,6 @@
 function displayData(data) {
 	const posts = data.posts;
+	document.getElementById("cardsSection").innerHTML = ``;
 
 	posts.forEach(function (post) {
 		const postImage = post.image,
@@ -243,5 +244,22 @@ function displayLatestData(posts) {
     `;
 
 		latestPosts.appendChild(div);
+	}
+}
+
+// =================================================================
+// =================================================================
+
+function searchPosts() {
+	const categoryName = document.getElementById("categoryName").value;
+	document.getElementById("categoryName").value = ``;
+
+	if (categoryName.length) {
+		const url = `https://openapi.programming-hero.com/api/retro-forum/posts?category=${categoryName}`;
+		fetch(url)
+			.then((res) => res.json())
+			.then((posts) => {
+				displayData(posts);
+			});
 	}
 }
