@@ -113,7 +113,6 @@
 				.cards {
 					border-radius: 24px;
 					background: #f3f3f5;
-					padding: 40px;
 					border: 1px solid white;
 				}
 
@@ -367,7 +366,7 @@
 		</header>
 
 		<!-- main section is here -->
-		<main class="container mx-auto mt-[100px] mb-[100px]">
+		<main class="container mx-auto mt-12 lg:mt-[100px] mb-12 lg:mb-[100px]">
 			<!-- lets discuss section -->
 			<section class="flex flex-col items-center justify-center">
 				<!-- section title -->
@@ -377,7 +376,7 @@
 
 				<!-- section discription -->
 				<p
-					class="text-lg text-[#12132D99] inter font-medium leading-7 w-[50%] text-center mt-4"
+					class="text-lg text-[#12132D99] inter font-medium leading-7 w-[90%] lg:w-1/2 text-center mt-4"
 				>
 					Yes, you can run unit tests and view the results directly
 					within the app. The integrated testing features allow for a
@@ -386,16 +385,16 @@
 
 				<!-- main part is here -->
 				<section
-					class="grid grid-cols-1 lg:grid-cols-12 w-full mt-12 gap-6"
+					class="lg:grid grid-cols-12 space-y-5 w-full mt-12 gap-6"
 				>
 					<!-- left side all cards -->
-					<div class="lg:col-span-8">
+					<div class="col-span-8">
 						<!-- cards section -->
 						<section
 							id="cardsSection"
 							class="grid grid-cols-1 gap-6"
 						>
-							<!-- All cards are here -->
+							<!--TODO: All cards are here -->
 						</section>
 
 						<!-- TODO: Handle if no data in database -->
@@ -547,6 +546,7 @@
 		</footer>
 
 		<!-- all JavaScript file is here -->
+		<!-- <script src="./test.js"></script> -->
 		<script src="./js/index.js"></script>
 		<script src="./js/apiRoute.js"></script>
 	</body>

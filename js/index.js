@@ -20,17 +20,17 @@ function displayData(data) {
 				postCard = document.createElement("div");
 
 			postCard.setAttribute("id", postID);
-			postCard.classList.add("cards", "grid", "grid-cols-12", "gap-6");
+			postCard.classList.add("cards", "p-5", "lg:p-10", "grid", "grid-cols-12", "gap-6");
 
 			postCard.innerHTML = `
-                    <div class="col-span-1 relative">
+                    <div class="col-span-3 lg:col-span-1 gap-3 relative">
                         <img src=" ${postImage} " alt="" />
                         <div id='active_${postID}'
                             class="success absolute -top-2 -right-2 bg-active"
                             ></div>
                         </div>
 
-                        <div class="col-span-11 divide-y divide-dashed">
+                        <div class="col-span-9 lg:col-span-11 divide-y divide-dashed">
                             <div>
                                 <div class="flex flex-col lg:flex-row gap-2 lg:gap-5 mb-2">
                                     <h1
@@ -63,8 +63,8 @@ function displayData(data) {
                                 </div>
                             </div>
 
-                            <div class="pt-5 flex justify-between">
-                                <div class="flex gap-6 items-center">
+                            <div class="pt-5 flex items-center justify-between">
+                                <div class="flex w-[70%] justify-center lg:w-auto flex-wrap gap-6 items-center">
                                     <div
                                         class="flex gap-3 items-center justify-center"
                                     >
