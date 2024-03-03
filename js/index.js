@@ -13,8 +13,8 @@ function displayData(data) {
 				postAuthor = post.author.name,
 				postTitle = post.title,
 				postBody = post.description,
-				postComment = post.comment_count,
-				postView = post.view_count,
+				postComment = post.comment_count.toLocaleString(),
+				postView = post.view_count.toLocaleString(),
 				postTime = post.posted_time,
 				cardsSection = document.getElementById("cardsSection"),
 				postCard = document.createElement("div");
@@ -221,7 +221,7 @@ function displayLatestData(posts) {
 		if (designations) {
 			designation = designations;
 		} else {
-			designation = "No Designation";
+			designation = "Unknown";
 		}
 
 		// TODO: Handle the error when date is not available
@@ -349,4 +349,19 @@ function loading(action) {
 function loaderLetest(action) {
 	const loader = document.getElementById("loaderLetest");
 	loader.style.display = action;
+}
+
+// =================================================================================================
+// =================================================================================================
+
+// TODO: Tooltip function for menu items.
+const tools = document.querySelectorAll(".tool");
+
+for (const tool of tools) {
+	tool.addEventListener("mouseover", () => {
+		tool.querySelector("div").style.display = "block";
+	});
+	tool.addEventListener("mouseout", () => {
+		tool.querySelector("div").style.display = "none";
+	});
 }

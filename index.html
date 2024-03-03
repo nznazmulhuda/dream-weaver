@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 		<!-- title and favicon is here -->
-		<title>Retro Forum</title>
+		<title>DreamWeaver Forum</title>
 		<link
 			rel="shortcut icon"
 			href="./images/joinforum.png"
@@ -133,6 +133,10 @@
 					font-weight: 400;
 					line-height: 26px;
 				}
+
+				.tip {
+					display: none;
+				}
 			}
 		</style>
 	</head>
@@ -142,40 +146,82 @@
 		<!-- header section is here -->
 		<header class="container mx-auto mt-14">
 			<!-- navbar is here -->
-			<nav class="flex mb-12 justify-between items-center">
+			<nav class="flex flex-col-reverse lg:flex-row mb-12 justify-center lg:justify-between items-center">
 				<!-- logo is here -->
 				<div class="cursor-pointer">
-					<img src="./images/logo.png" alt="" />
+					<h1 class="text-[#12132D] text-4xl font-[900]">
+						DreamWeaver
+					</h1>
 				</div>
 
 				<!-- menu is here -->
 				<div class="flex items-center gap-3">
 					<div
-						title="Home"
-						class="border-2 border-borderColor rounded-full px-4 py-4 bg-menuBg cursor-pointer"
+						class="border-2 tool relative border-borderColor rounded-full px-4 py-4 bg-menuBg cursor-pointer"
 					>
 						<img src="./images/home.png" alt="" />
+
+						<div
+							class="absolute tip bg-[#12132D] rounded-md text-white py-1 px-2 -top-2 -translate-y-full -translate-x-1/4"
+						>
+							<h1 class="inter text-[12px] leading-4">Home</h1>
+							<img
+								class="absolute -bottom-1 left-1/2 -translate-x-1/2"
+								src="./images/Tip.png"
+								alt=""
+							/>
+						</div>
 					</div>
 
 					<div
-						title="Tooltip"
-						class="border-2 border-borderColor rounded-full px-4 py-4 bg-menuBg cursor-pointer"
+						class="border-2 tool relative border-borderColor rounded-full px-4 py-4 bg-menuBg cursor-pointer"
 					>
 						<img src="./images/edit.png" alt="" />
+
+						<div
+							class="absolute tip bg-[#12132D] rounded-md text-white py-1 px-2 -top-2 -translate-y-full -translate-x-1/4"
+						>
+							<h1 class="inter text-[12px] leading-4">Pen</h1>
+							<img
+								class="absolute -bottom-1 left-1/2 -translate-x-1/2"
+								src="./images/Tip.png"
+								alt=""
+							/>
+						</div>
 					</div>
 
 					<div
-						title="Add"
-						class="border-2 border-borderColor rounded-full px-4 py-4 bg-menuBg cursor-pointer"
+						class="border-2 tool relative border-borderColor rounded-full px-4 py-4 bg-menuBg cursor-pointer"
 					>
 						<img src="./images/add.png" alt="" />
+
+						<div
+							class="absolute tip bg-[#12132D] rounded-md text-white py-1 px-2 -top-2 -translate-y-full -translate-x-1/4"
+						>
+							<h1 class="inter text-[12px] leading-4">Add</h1>
+							<img
+								class="absolute -bottom-1 left-1/2 -translate-x-1/2"
+								src="./images/Tip.png"
+								alt=""
+							/>
+						</div>
 					</div>
 
 					<div
-						title="Report"
-						class="border-2 border-borderColor rounded-full px-4 py-4 bg-menuBg cursor-pointer"
+						class="border-2 tool relative border-borderColor rounded-full px-4 py-4 bg-menuBg cursor-pointer"
 					>
 						<img src="./images/flag.png" alt="" />
+
+						<div
+							class="absolute tip bg-[#12132D] rounded-md text-white py-1 px-2 -top-2 -translate-y-full -translate-x-1/4"
+						>
+							<h1 class="inter text-[12px] leading-4">Report</h1>
+							<img
+								class="absolute -bottom-1 left-1/2 -translate-x-1/2"
+								src="./images/Tip.png"
+								alt=""
+							/>
+						</div>
 					</div>
 
 					<div class="ml-3">
@@ -201,7 +247,7 @@
 							class="font-[900] text-white leading-[86px] text-[64px]"
 						>
 							Welcome to the
-							<span class="logoSpan">ReTro</span> Forum
+							<span class="logoSpan">DreamWeaver</span> Forum
 						</h1>
 
 						<!-- description -->
@@ -444,7 +490,9 @@
 		<footer
 			class="w-full footer py-[100px] flex items-center justify-center flex-col"
 		>
-			<img src="./images/logo.png" alt="" />
+			<div class="cursor-pointer">
+				<h1 class="text-[#12132D] text-4xl font-[900]">DreamWeaver</h1>
+			</div>
 
 			<p
 				class="text-[16px] text-center text-[#12132DB2] leading-7 font-normal"
