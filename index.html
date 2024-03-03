@@ -73,7 +73,6 @@
 					background-size: 100% 100%;
 					background-repeat: no-repeat;
 					width: 100%;
-					height: 60vh;
 					border-radius: 32px;
 				}
 
@@ -89,6 +88,18 @@
 					font-style: normal;
 					font-weight: 900;
 					line-height: 86px;
+				}
+
+				.logoResponsive {
+					background: linear-gradient(
+						120deg,
+						#797dfc 0.63%,
+						rgba(121, 125, 252, 0.4)
+					);
+					background-clip: text;
+					-webkit-background-clip: text;
+					-webkit-text-fill-color: transparent;
+					font-weight: 900;
 				}
 
 				.footer {
@@ -142,11 +153,13 @@
 	</head>
 
 	<!-- body tag is here -->
-	<body>
+	<body class="border-red-500 border-2">
 		<!-- header section is here -->
 		<header class="container mx-auto mt-14">
 			<!-- navbar is here -->
-			<nav class="flex flex-col-reverse lg:flex-row mb-12 justify-center lg:justify-between items-center">
+			<nav
+				class="flex flex-col-reverse lg:flex-row mb-12 justify-center lg:justify-between items-center"
+			>
 				<!-- logo is here -->
 				<div class="cursor-pointer">
 					<h1 class="text-[#12132D] text-4xl font-[900]">
@@ -155,76 +168,84 @@
 				</div>
 
 				<!-- menu is here -->
-				<div class="flex items-center gap-3">
-					<div
-						class="border-2 tool relative border-borderColor rounded-full px-4 py-4 bg-menuBg cursor-pointer"
-					>
-						<img src="./images/home.png" alt="" />
+				<div
+					class="flex flex-col lg:flex-row items-center gap-6 lg:gap-3"
+				>
+					<div class="flex gap-3">
+						<div
+							class="border-2 tool relative border-borderColor rounded-full px-4 py-4 bg-menuBg cursor-pointer"
+						>
+							<img src="./images/home.png" alt="" />
+
+							<div
+								class="absolute tip bg-[#12132D] rounded-md text-white py-1 px-2 -top-2 -translate-y-full -translate-x-1/4"
+							>
+								<h1 class="inter text-[12px] leading-4">
+									Home
+								</h1>
+								<img
+									class="absolute -bottom-1 left-1/2 -translate-x-1/2"
+									src="./images/Tip.png"
+									alt=""
+								/>
+							</div>
+						</div>
 
 						<div
-							class="absolute tip bg-[#12132D] rounded-md text-white py-1 px-2 -top-2 -translate-y-full -translate-x-1/4"
+							class="border-2 tool relative border-borderColor rounded-full px-4 py-4 bg-menuBg cursor-pointer"
 						>
-							<h1 class="inter text-[12px] leading-4">Home</h1>
-							<img
-								class="absolute -bottom-1 left-1/2 -translate-x-1/2"
-								src="./images/Tip.png"
-								alt=""
-							/>
+							<img src="./images/edit.png" alt="" />
+
+							<div
+								class="absolute tip bg-[#12132D] rounded-md text-white py-1 px-2 -top-2 -translate-y-full -translate-x-1/4"
+							>
+								<h1 class="inter text-[12px] leading-4">Pen</h1>
+								<img
+									class="absolute -bottom-1 left-1/2 -translate-x-1/2"
+									src="./images/Tip.png"
+									alt=""
+								/>
+							</div>
+						</div>
+
+						<div
+							class="border-2 tool relative border-borderColor rounded-full px-4 py-4 bg-menuBg cursor-pointer"
+						>
+							<img src="./images/add.png" alt="" />
+
+							<div
+								class="absolute tip bg-[#12132D] rounded-md text-white py-1 px-2 -top-2 -translate-y-full -translate-x-1/4"
+							>
+								<h1 class="inter text-[12px] leading-4">Add</h1>
+								<img
+									class="absolute -bottom-1 left-1/2 -translate-x-1/2"
+									src="./images/Tip.png"
+									alt=""
+								/>
+							</div>
+						</div>
+
+						<div
+							class="border-2 tool relative border-borderColor rounded-full px-4 py-4 bg-menuBg cursor-pointer"
+						>
+							<img src="./images/flag.png" alt="" />
+
+							<div
+								class="absolute tip bg-[#12132D] rounded-md text-white py-1 px-2 -top-2 -translate-y-full -translate-x-1/4"
+							>
+								<h1 class="inter text-[12px] leading-4">
+									Report
+								</h1>
+								<img
+									class="absolute -bottom-1 left-1/2 -translate-x-1/2"
+									src="./images/Tip.png"
+									alt=""
+								/>
+							</div>
 						</div>
 					</div>
 
-					<div
-						class="border-2 tool relative border-borderColor rounded-full px-4 py-4 bg-menuBg cursor-pointer"
-					>
-						<img src="./images/edit.png" alt="" />
-
-						<div
-							class="absolute tip bg-[#12132D] rounded-md text-white py-1 px-2 -top-2 -translate-y-full -translate-x-1/4"
-						>
-							<h1 class="inter text-[12px] leading-4">Pen</h1>
-							<img
-								class="absolute -bottom-1 left-1/2 -translate-x-1/2"
-								src="./images/Tip.png"
-								alt=""
-							/>
-						</div>
-					</div>
-
-					<div
-						class="border-2 tool relative border-borderColor rounded-full px-4 py-4 bg-menuBg cursor-pointer"
-					>
-						<img src="./images/add.png" alt="" />
-
-						<div
-							class="absolute tip bg-[#12132D] rounded-md text-white py-1 px-2 -top-2 -translate-y-full -translate-x-1/4"
-						>
-							<h1 class="inter text-[12px] leading-4">Add</h1>
-							<img
-								class="absolute -bottom-1 left-1/2 -translate-x-1/2"
-								src="./images/Tip.png"
-								alt=""
-							/>
-						</div>
-					</div>
-
-					<div
-						class="border-2 tool relative border-borderColor rounded-full px-4 py-4 bg-menuBg cursor-pointer"
-					>
-						<img src="./images/flag.png" alt="" />
-
-						<div
-							class="absolute tip bg-[#12132D] rounded-md text-white py-1 px-2 -top-2 -translate-y-full -translate-x-1/4"
-						>
-							<h1 class="inter text-[12px] leading-4">Report</h1>
-							<img
-								class="absolute -bottom-1 left-1/2 -translate-x-1/2"
-								src="./images/Tip.png"
-								alt=""
-							/>
-						</div>
-					</div>
-
-					<div class="ml-3">
+					<div class="lg:ml-3 mb-10 lg:mb-0">
 						<button
 							class="px-10 py-[18px] bg-theme rounded-[50px] text-white font-bold text-xl"
 						>
@@ -238,39 +259,44 @@
 			<section>
 				<!-- banner is here -->
 				<div
-					class="banner flex justify-between px-[100px] items-center flex-wrap"
+					class="banner lg:h-[60vh] flex flex-col lg:flex-row justify-between px-[20px] py-5 lg:py-0 gap-10 lg:gap-0 lg:px-[100px] items-center"
 				>
 					<!-- Greation part -->
-					<div class="w-1/2">
+					<div class="lg:w-1/2">
 						<!-- greating -->
 						<h1
-							class="font-[900] text-white leading-[86px] text-[64px]"
+							class="font-[900] mb-5 lg:mb-0 text-white lg:leading-[86px] text-3xl lg:text-[64px]"
 						>
 							Welcome to the
-							<span class="logoSpan">DreamWeaver</span> Forum
+							<span class="logoResponsive lg:logoSpan"
+								>DreamWeaver</span
+							>
+							Forum
 						</h1>
 
 						<!-- description -->
-						<p class="text-[#FFFFFFCC] leading-[36px] text-xl">
+						<p
+							class="text-[#FFFFFFCC] lg:leading-[36px] text-lg lg:text-xl"
+						>
 							Share your favorite opinion and win and wp forum
 							coffee mug!
 						</p>
 
 						<!-- Search bar -->
 						<div
-							class="flex mt-8 bg-white w-[80%] justify-between p-2 rounded-[50px]"
+							class="flex mt-8 bg-white lg:w-[80%] justify-between p-2 rounded-[50px]"
 						>
 							<input
 								id="categoryName"
 								type="text"
 								placeholder="Search here anything"
-								class="pl-5 outline-none border-none w-[80%] placeholder:font-medium"
+								class="pl-3 lg:pl-5 outline-none border-none w-[80%] placeholder:font-medium placeholder:text-sm lg:placeholder:text-[16px]"
 							/>
 
 							<div class="ml-3">
 								<button
 									onclick="searchPosts()"
-									class="px-7 py-[5px] bg-theme rounded-[46px] text-white font-bold text-xl"
+									class="px-3 lg:px-7 py-[5px] bg-theme rounded-[46px] text-white font-bold text-sm lg:text-xl"
 								>
 									Search
 								</button>
@@ -279,18 +305,18 @@
 					</div>
 
 					<!-- Website info part -->
-					<div class="w-[35%]">
+					<div class="w-full lg:w-[35%]">
 						<div
-							class="bg-white p-12 flex flex-col gap-6 rounded-[32px]"
+							class="bg-white p-8 lg:p-12 flex flex-col gap-6 rounded-[32px]"
 						>
 							<div class="flex justify-between">
 								<h1
-									class="text-[#12132DCC] text-2xl font-medium"
+									class="text-[#12132DCC] text-lg lg:text-2xl font-medium"
 								>
 									Registered Users
 								</h1>
 								<p
-									class="text-[#12132DCC] text-2xl font-medium"
+									class="text-[#12132DCC] text-lg lg:text-2xl font-medium"
 								>
 									01
 								</p>
@@ -298,12 +324,12 @@
 
 							<div class="flex justify-between">
 								<h1
-									class="text-[#12132DCC] text-2xl font-medium"
+									class="text-[#12132DCC] text-lg lg:text-2xl font-medium"
 								>
 									Forum
 								</h1>
 								<p
-									class="text-[#12132DCC] text-2xl font-medium"
+									class="text-[#12132DCC] text-lg lg:text-2xl font-medium"
 								>
 									05
 								</p>
@@ -311,12 +337,12 @@
 
 							<div class="flex justify-between">
 								<h1
-									class="text-[#12132DCC] text-2xl font-medium"
+									class="text-[#12132DCC] text-lg lg:text-2xl font-medium"
 								>
 									Topics
 								</h1>
 								<p
-									class="text-[#12132DCC] text-2xl font-medium"
+									class="text-[#12132DCC] text-lg lg:text-2xl font-medium"
 								>
 									01
 								</p>
@@ -324,12 +350,12 @@
 
 							<div class="flex justify-between">
 								<h1
-									class="text-[#12132DCC] text-2xl font-medium"
+									class="text-[#12132DCC] text-lg lg:text-2xl font-medium"
 								>
 									Replies
 								</h1>
 								<p
-									class="text-[#12132DCC] text-2xl font-medium"
+									class="text-[#12132DCC] text-lg lg:text-2xl font-medium"
 								>
 									01
 								</p>
@@ -359,9 +385,11 @@
 				</p>
 
 				<!-- main part is here -->
-				<section class="grid grid-cols-12 w-full mt-12 gap-6">
+				<section
+					class="grid grid-cols-1 lg:grid-cols-12 w-full mt-12 gap-6"
+				>
 					<!-- left side all cards -->
-					<div class="col-span-8">
+					<div class="lg:col-span-8">
 						<!-- cards section -->
 						<section
 							id="cardsSection"

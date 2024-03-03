@@ -32,7 +32,7 @@ function displayData(data) {
 
                         <div class="col-span-11 divide-y divide-dashed">
                             <div>
-                                <div class="flex gap-5 mb-2">
+                                <div class="flex flex-col lg:flex-row gap-2 lg:gap-5 mb-2">
                                     <h1
                                         class="text-sm font-medium inter text-[#12132DCC]"
                                     >
@@ -48,7 +48,7 @@ function displayData(data) {
 
                                 <div class="mb-3">
                                     <h1 id='title_${postID}'
-                                        class="text-[#12132D] font-bold text-xl"
+                                        class="text-[#12132D] font-bold text-lg lg:text-xl"
                                     >
                                         ${postTitle}
                                     </h1>
@@ -56,7 +56,7 @@ function displayData(data) {
 
                                 <div class="mb-5">
                                     <p
-                                        class="text-[#12132D99] leading-7 font-medium inter text-[16px]"
+                                        class="text-[#12132D99] leading-7 font-medium inter text-sm lg:text-[16px]"
                                     >
                                         ${postBody}
                                     </p>
